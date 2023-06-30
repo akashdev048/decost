@@ -24,7 +24,7 @@ function App(props) {
       <SideBar />
 
        <Routes>
-          <Route path="/" element={<Dashboard />}  />
+          <Route path="/" element={<div>main page</div>} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/monitors" element={<Monitors />}/>
           <Route path="/cost-cutter" element={<CostCutter />}/>
