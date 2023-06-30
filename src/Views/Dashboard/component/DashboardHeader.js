@@ -12,6 +12,10 @@ const DashboardHeader = () => {
             <div className='webslect-control'>
               <select className='form-control control-select-web'>
                 <option>NG</option>
+                <option>MG</option>
+                <option>TL</option>
+                <option>AG</option>
+                <option>TN</option>
               </select>
             </div>
           </div>

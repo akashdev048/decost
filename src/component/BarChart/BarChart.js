@@ -5,7 +5,7 @@ const BarChart = () => {
   const chartData = {
     series: [
       {
-        data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380],
+        data: [360, 500, 200, 300, 150, 200, 400, 50, 150, 450],
       },
     ],
     options: {
@@ -18,25 +18,26 @@ const BarChart = () => {
       },
       plotOptions: {
         bar: {
-          borderRadius: 4,
+          borderRadius: 0,
           horizontal: true,
         },
       },
       dataLabels: {
         enabled: false,
       },
+      colors: ["#C8A1FF"],
       xaxis: {
         categories: [
-          "South Korea",
-          "Canada",
-          "United Kingdom",
-          "Netherlands",
-          "Italy",
-          "France",
-          "Japan",
-          "United States",
-          "China",
-          "Germany",
+          "John Lebriwske",
+          "Andre  Mern",
+          "Jean Andrew",
+          "John Lebriwske",
+          "Jean Andrew",
+          "Andre  Mern",
+          "John Lebriwske",
+          "Andre  Mern",
+          "Jean Andrew",
+          "John Lebriwske",
         ],
       },
     },
@@ -44,6 +45,10 @@ const BarChart = () => {
 
   return (
     <div>
+      <div className='chart-tabs'>
+        <button>Cost</button>
+        <button disabled className='disable-tab-btn'>Time</button>
+      </div>
       <ReactApexChart
         options={chartData.options}
         series={chartData.series}
