@@ -1,0 +1,147 @@
+
+.btn-primary{
+    background-color: #196aa5;
+    border-color: #196aa5;
+}
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle{
+    background-color: #196aa5;
+    border-color: #196aa5;
+}
+.btn-check:focus+.btn-primary, .btn-primary:focus{
+    background-color: #196aa5;
+    border-color: #196aa5;
+}
+.iconsOut i{
+   cursor: pointer;
+}
+.iconsOut i:first-child{
+    margin-right: 20px;
+}
+.iconsOut i:last-child{
+    color: rgb(15, 174, 15);
+}
+.tabmenu-panel>.nav-item>.nav-link {
+    background-color: #196aa5;
+    border-color: #196aa5;
+    margin-right: 5px;
+    color: #fff;
+    border-radius: 30px;
+    padding: 4px 35px
+}
+.tabmenu-panel>.nav-item>.nav-link.active {
+    background-color: #196aa5;
+    color: #fff;
+    border-color: #196aa5;
+}
+.control-input-select {
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    appearance: auto;
+    height: 50px;
+    background-color: #f4f5f6;
+}
+.mainrow--tablegrid {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.tableheading {
+    border-width: 0px !important;
+}
+.tablemax--row thead, .tablemax--row tbody, .tablemax--row th {
+    border: 0;
+}
+.tablemax--row tr th {
+    color: #c8c8c8;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: left;
+}
+.tablemax--row tr td {
+    color: #9593b4;
+    font-weight: 500;
+    font-size: 14px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    vertical-align: middle;
+    text-align: left;
+    background-color: #f4faff;
+    border: none;
+    border-left: 10px solid #fff;
+    border-bottom: 3px solid #ffff;
+}
+.tabletxt-items .serial-txt-td {
+    color: #5a5385 !important;
+    font-weight: 800;
+    padding-left: 30px;
+}
+.tabletxt-items td:nth-child(3) {
+    background-color: #ffecec;
+}
+.tablemax--row tr:last-child td {
+    border-bottom: 0;
+}
+.table>:not(:first-child) {
+    border-top: 0;
+}
+.btn-edit{
+    padding: 0;
+    color: #60a0ee;
+    text-decoration: underline;
+}
+.searchfill .control-search {
+    background-color: #edf1f5;
+    height: 34px;
+    border: 0px;
+    color: #fff;
+    border-radius: 30px !important;
+}
+.searchfill .btn-search-btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    color: #d1d4d8;
+    transform: translateY(-50%);
+    background-color: transparent;
+}
+.searchfill .btn-search-btn:focus{
+    outline: none;
+    box-shadow: none;
+}
+.controlselect-table {
+    background-color: #edf1f5;
+    height: 34px;
+    border: 0px;
+    color: #a0a0a0;
+    border-radius: 30px !important;
+    width: 120px;
+    text-align: center;
+}
+.pageitem--link .page-link-txt {
+    display: block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-decoration: none;
+    text-align: center;
+    margin: 5px;
+    border-radius: 7px;
+    font-size: 13px;
+    color: #000;
+}
+.pageitem--link .page-link-txt.active{
+    background-color: #508ff4;
+    color: #fff;
+}
+.pageitem--link:last-child .page-link-txt{
+    background-color: transparent;
+}
+@media screen and (max-width: 767px) {
+    .tabmenu-panel>.nav-item>.nav-link {
+        padding: 5px 15px;
+    }
+    .control-input-select {
+        height: 40px;
+    }
+}
