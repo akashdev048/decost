@@ -19,11 +19,11 @@ const MixedLineBarChart = () => {
           },
       },
 
-      colors: ['#FF0000', '#FFC0CB'], // Specify the colors for columns and curves
+      colors: ['#DF96A3', '#C5C533','#2A952A','#9C8F9B'], // Specify the colors for columns and curves
 
       xaxis: {
 
-        categories: ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5'],
+        categories: ['1 jan 2022', '4 jan 2022', '6 jan 2022', '1 jan 2022', '1 jan 2022','1 jan 2022', '1 jan 2022', '1 jan 2022', '1 jan 2022', '1 jan 2022', '1 jan 2022', '1 jan 2022'],
 
         labels: {
 
@@ -51,7 +51,7 @@ const MixedLineBarChart = () => {
 
         bar: {
 
-          columnWidth: '10%', // Adjust the column width here
+          columnWidth: '15%', // Adjust the column width here
 
           startingShape: 'flat', // Set the starting shape to flat
 
@@ -69,33 +69,42 @@ const MixedLineBarChart = () => {
 
       {
 
-        name: 'Column Series',
+        name: '21D MA',
 
         type: 'column',
 
-        data: [44, 55, 41, 67, 22],
+        data: [44, 55, 41, 67, 22,79,98,56,34,12,90,107],
 
       },
 
       {
 
-        name: 'Curve Series',
+        name: '14D MA',
 
         type: 'line',
 
-        data: [30, 40, 35, 50, 49],
+        data: [30, 40, 35, 50, 49,55,48,31,85,61,1,50],
 
       },
-
       {
 
-        name: 'Series',
+        name: '7D MA',
 
         type: 'line',
 
-        data: [35, 45, 37, 58, 52],
+        data: [30, 40, 45, 40, 79,98,67,54,9,32,88,10],
 
       },
+      {
+
+        name: '7D MA',
+
+        type: 'line',
+
+        data: [30, 40, 45, 40, 65,46,98,34,87,60,40,40,40],
+
+      },
+
 
     ],
 
@@ -114,10 +123,10 @@ const MixedLineBarChart = () => {
 
       type="line"
 
-      height={500}
+      height={400}
 
 
-      width={1000}
+      width={600}
 
     />
 
