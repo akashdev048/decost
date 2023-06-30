@@ -13,12 +13,29 @@ const StackChart = () => {
           },
         },
         xaxis: {
-          categories: ['January', 'February', 'March', 'April', 'May', 'June'],
+          categories: ['June 2021', 'June 2021', 'June 2021', 'June 2021', 'June 2021', 'June 2021','June 2021','June 2021','June 2021','June 2021','June 2021','June 2021'],
         },
+        yaxis: {
+          min: 0,
+          max: 140000,
+          labels: {
+            formatter: function (value) {
+              return value/1000 + 'k';
+            },
+          },
+           tickAmount: 7,
+        },
+        title: {
+          text: 'Cost ($)',
+        },
+        colors: ['#70566D', '#D38B5D', '#16C098'],
         plotOptions: {
           bar: {
+            dataLabels: {
+              enabled: false,
+            },
             horizontal: false,
-            columnWidth: '10%', // Adjust the column width as needed
+            columnWidth: '25%', // Adjust the column width as needed
           },
         },
         legend: {
@@ -28,15 +45,15 @@ const StackChart = () => {
       series: [
         {
           name: 'Series A',
-          data: [30, 40, 35, 50, 49, 60],
+          data: [30000, 40000, 35000, 50000, 49000, 60000,30000, 40000, 35000, 50000, 49000, 60000],
         },
         {
           name: 'Series B',
-          data: [23, 12, 54, 61, 32, 56],
+          data: [23000, 12000, 54000, 61000, 32000, 56000,30000, 40000, 35000, 50000, 49000, 60000],
         },
         {
           name: 'Series C',
-          data: [42, 23, 54, 23, 24, 65],
+          data: [42000, 23000, 54000, 23000, 24000, 65000,30000, 40000, 35000, 500000, 49000, 60000],
         },
       ],
     };
