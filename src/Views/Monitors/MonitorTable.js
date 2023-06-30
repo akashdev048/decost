@@ -3,8 +3,8 @@ import "./monitor-table.css";
 
 function MonitorTable() {
   return (
-    <div className="SE-tableCustomWapaper SE-tabWrapper">
-      <table className='table'>
+    <div >
+      <table >
         <thead>
           <th>Workload</th>
           <th>Workload_Schema</th>
