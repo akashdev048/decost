@@ -20,7 +20,9 @@
     width: 150px;
 }
 .dashboard-wrapper {
-    padding: 15px 0px 80px;
+    padding: 15px 20px 40px 20px;
+    height: calc(100vh - 68px);
+    overflow: auto;
 }
 .dashboard-header-top {
     background-color: #fff;
@@ -92,18 +94,27 @@
     text-align: left;
 }
 .small-title-wgt {
-    font-size: 12px;
+    font-size: 20px;
     color: #8a8888;
     font-weight: 400;
 }
 .wg-elemnt-mt p {
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: 400;
     color: #000;
     margin-bottom: 0px;
 }
 
+.chart-head {
+    font-size: 18px;
+    color: #212529;
+    font-weight: 500;
+}
 
-
+.semi-row-div {
+    min-height: 350px;
+    height: 50%;
+}
 
 
 

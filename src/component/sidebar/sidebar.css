@@ -1,0 +1,20 @@
+.sidebar-content .active-tab li, .pro-sidebar-footer .active-tab li {
+    background-color: #F8F8F8;
+    color: #5932EA !important;
+    font-weight: 700;
+    border: 1px solid #f7fbff;
+}
+
+
+.sidebar-content a li, .pro-sidebar-footer a li {
+    padding: 0 15px !important;
+    margin: 10px 0 !important;
+}
+
+
+img.side-ico {
+    height: 28px;
+    width: auto;
+    margin-right: 10px;
+    padding-bottom: 2px;
+}
