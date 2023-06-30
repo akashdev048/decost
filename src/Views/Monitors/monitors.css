@@ -37,3 +37,12 @@
     margin-left: 2px;
     border: 1px solid white;
 }
+.monito-section {
+    padding: 15px 0px 80px;
+}
+.title-main-wgt {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #343434;
+    font-size: 16px;
+}
