@@ -1,0 +1,7 @@
+.warehouse-table .table {
+    border-color: #fff;
+}
+
+.warehouse-table .table>:not(:first-child) {
+    border-top: 2px solid #f3efef !important;
+}
