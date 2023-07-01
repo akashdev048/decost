@@ -1,126 +1,103 @@
 import React from 'react';
 
-import Chart from 'react-apexcharts';
+import ReactApexChart from "react-apexcharts";
 
 
 
 
 const MixedLineBarChart = () => {
 
-  const chartOptions = {
+  let series = [
+    {
+    name: '7D MA',
+    type: 'column',
+    data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30, 34, 23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30]
+  },
+  {
+    name: '14D MA',
+    type: 'line',
+    data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39, 20, 30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
+  },
+  {
+    name: '21D MA',
+    type: 'line',
+    data: [25, 20, 31, 25, 40, 30, 55, 45, 50, 30, 32, 33, 25, 20, 31, 25, 40, 30, 55, 45, 50, 30, 32]
+  },
+  {
+    name: '30D MA',
+    type: 'line',
+    data: [20, 40, 45, 28, 23, 55, 60, 45, 51, 30, 35, 40, 20, 40, 45, 28, 23, 55, 60, 45, 51, 30, 35]
+  }
+  ]
 
-    options: {
 
-      chart: {
-
-        id: 'combo-chart',
-        toolbar: {
-            show: false, // Set show property to false
-          },
-      },
-
-      colors: ['#FF0000', '#FFC0CB'], // Specify the colors for columns and curves
-
-      xaxis: {
-
-        categories: ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5'],
-
-        labels: {
-
-            style: {
-
-                fontSize: '12px', // Adjust label font size
-
-              },
-
-          },
-
-      },
-
-      stroke: {
-
-                    // width: [0, 4],
-
-                    curve: 'smooth'
-
-       
-
-                  },
-
-      plotOptions: {
-
-        bar: {
-
-          columnWidth: '10%', // Adjust the column width here
-
-          startingShape: 'flat', // Set the starting shape to flat
-
-          endingShape: 'flat', // Set the ending shape to flat
-
-          horizontal: false, // Set horizontal to false for vertical columns
-
-        },
-
-      },
-
+  let options = {
+    chart: {
+      height: 350,
+      type: 'line',
+      stacked: false,
+      toolbar: {
+        show: false
+      }
     },
+    legend: {
+      show: true,
+      position: 'top',
+    },
+    stroke: {
+      width: [2, 2, 2],
+      curve: 'smooth'
+    },
+    plotOptions: {
+      bar: {
+        columnWidth: '50%'
+      }
+    },
+    colors: ["#9C8F9B", "#C5C533", "#2A952A", "#DF96A3"],
 
-    series: [
+    // fill: {
+    //   opacity: [0.85, 0.25, 1],
+    //   gradient: {
+    //     inverseColors: false,
+    //     shade: 'light',
+    //     type: "vertical",
+    //     opacityFrom: 0.85,
+    //     opacityTo: 0.55,
+    //     stops: [0, 100, 100, 100]
+    //   }
+    // },
 
-      {
 
-        name: 'Column Series',
 
-        type: 'column',
-
-        data: [44, 55, 41, 67, 22],
-
-      },
-
-      {
-
-        name: 'Curve Series',
-
-        type: 'line',
-
-        data: [30, 40, 35, 50, 49],
-
-      },
-
-      {
-
-        name: 'Series',
-
-        type: 'line',
-
-        data: [35, 45, 37, 58, 52],
-
-      },
-
+    labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6',
+      'Day 7', 'Day 8', 'Day 9', 'Day 10', 'Day 11', 'Day 12', 'Day 13',
+      'Day 14', 'Day 15', 'Day 16', 'Day 17', 'Day 18', 'Day 19', 'Day 20', 'Day 21', 'Day 22', 'Day 23'
     ],
 
-  };
-
-
+    markers: {
+      size: 0
+    },
+    xaxis: {
+      labels: {
+        rotate: -90
+      },
+      categories: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6',
+        'Day 7', 'Day 8', 'Day 9', 'Day 10', 'Day 11', 'Day 12', 'Day 13',
+        'Day 14', 'Day 15', 'Day 16', 'Day 17', 'Day 18', 'Day 19', 'Day 20', 'Day 21', 'Day 22', 'Day 23'
+      ],
+      tickPlacement: 'on'
+    },
+    yaxis: {
+      title: {
+        text: 'COST',
+      },
+      min: 0
+    }
+  }
 
 
   return (
-
-    <Chart
-
-      options={chartOptions.options}
-
-      series={chartOptions.series}
-
-      type="line"
-
-      height={500}
-
-
-      width={1000}
-
-    />
-
+    <ReactApexChart options={options} series={series} type="line" height={450} />
   );
 
 };
