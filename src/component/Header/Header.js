@@ -14,7 +14,7 @@ const Header = () =>  {
             <div className='header'>
                 <Navbar expand="lg" className="navbar-">
                     <Container fluid className='px-4'>
-                        <Navbar.Brand className='brand-logo' href="#"><img src={logo} alt='' /><span className='logo-txt'>Dcost</span></Navbar.Brand>
+                        <Navbar.Brand className='brand-logo' href="#"><img src={logo} alt='' /><span className='logo-txt'>DCost</span></Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <div className='leftside-search'>
