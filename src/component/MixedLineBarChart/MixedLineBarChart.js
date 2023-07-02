@@ -55,19 +55,6 @@ const MixedLineBarChart = () => {
     },
     colors: ["#9C8F9B", "#C5C533", "#2A952A", "#DF96A3"],
 
-    // fill: {
-    //   opacity: [0.85, 0.25, 1],
-    //   gradient: {
-    //     inverseColors: false,
-    //     shade: 'light',
-    //     type: "vertical",
-    //     opacityFrom: 0.85,
-    //     opacityTo: 0.55,
-    //     stops: [0, 100, 100, 100]
-    //   }
-    // },
-
-
 
     labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6',
       'Day 7', 'Day 8', 'Day 9', 'Day 10', 'Day 11', 'Day 12', 'Day 13',

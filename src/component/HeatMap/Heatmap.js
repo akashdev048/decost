@@ -259,6 +259,9 @@ function Heatmap() {
     chart: {
       height: 350,
       type: 'heatmap',
+      toolbar: {
+        show: false
+      }
     },
     dataLabels: {
       enabled: false
@@ -272,7 +275,29 @@ function Heatmap() {
 
   return (
     <div className='mult-contenttab'>
-      <div className="heading-bar-top mt-3"><h2 className="title-main-wgt">Cost & time by Day and month</h2></div>
+      <div className="heading-bar-top mt-3">
+        <div className="d-flex align-items-center">
+          <h2 className="title-main-wgt mb-0">Cost & time by Day and month</h2>
+          <div className="elemnt-multidrop-mtl">
+            <div className="dropweb--yt--wer">
+              <select className="form-control select-opt-drop">
+                <option>Finance</option>
+              </select>
+            </div>
+            <div className="dropweb--yt--wer">
+              <div className="web-tt-cost">
+                <span className="txt-cost">Cost</span>
+                <span className="txt-time">Time</span>
+              </div>
+            </div>
+            <div className="dropweb--yt--wer">
+              <select className="form-control select-opt-drop">
+                <option>Rep layer</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className='image-chart-date'>
         {/* <div className='card' style={{overflow:'hidden'}}><img src={heatmap} alt=''  /></div> */}
         <ReactApexChart options={options} series={series} type="heatmap" height={1000} />

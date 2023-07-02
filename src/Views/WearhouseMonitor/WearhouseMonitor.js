@@ -9,28 +9,53 @@ function WearhouseMonitor() {
     <>
       <Row>
         <Col className="col-12 col-lg-7 col-xl-7 mb-4">
-          <div className='col-div-wrapper' style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", height: "100%" }}>
-            <MixedLineBarChart />
+          <div className='card'>
+            <div className='card-header bg-white py-3'>
+              <h3 className="title-wg-yth">Warehouse cost for last 23 days</h3>
+            </div>
+            <div className='card-body'>
+              <MixedLineBarChart />
+            </div>
           </div>
         </Col>
         <Col className="col-12 col-lg-5 col-xl-5 mb-4">
-          <div className='col-div-wrapper mb-4' style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", height: "45%", minHeight: "240px" }}>
-            <Table1 />
+          <div className='card mb-3'>
+            <div className='card-header bg-white py-3'>
+              <h3 className="title-wg-yth">Top 25 Jobs</h3>
+            </div>
+            <div className='card-body'>
+              <Table1 />
+            </div>
           </div>
-          <div className='col-div-wrapper' style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", height: "45%", minHeight: "240px" }}>
-            <Table1 />
+          <div className='card'>
+            <div className='card-header bg-white py-3'>
+              <h3 className="title-wg-yth">Repetitive jobs</h3>
+            </div>
+            <div className='card-body'>
+              <Table1 />
+            </div>
           </div>
         </Col>
       </Row>
       <Row>
-        <Col style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", minHeight: "240px" }} className='mb-4'>
-          <div className='col-div-wrapper' style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", height: "50%", minHeight: "240px" }}>
-            <Table1 />
+        <Col className="col-12 col-lg-7 col-xl-7">
+          <div className='card'>
+            <div className='card-header bg-white py-3'>
+              <h3 className="title-wg-yth">Warehouse Configuration</h3>
+            </div>
+            <div className='card-body'>
+              <Table1 />
+            </div>
           </div>
         </Col>
-        <Col className="col-12 col-lg-5 col-xl-5 mb-4" style={{ minHeight: "240px" }}>
-          <div className='col-div-wrapper' style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", height: "50%", minHeight: "240px" }}>
-            <Table1 />
+        <Col className="col-12 col-lg-5 col-xl-5">
+          <div className='card'>
+            <div className='card-header bg-white py-3'>
+              <h3 className="title-wg-yth">Warehouse without Resource Monitor</h3>
+            </div>
+            <div className='card-body'>
+              <Table1 />
+            </div>
           </div>
         </Col>
       </Row>
