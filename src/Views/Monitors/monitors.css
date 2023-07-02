@@ -46,3 +46,7 @@
     color: #343434;
     font-size: 16px;
 }
+.cardequal-ht{
+    height: calc(100% - 15px);
+    margin-bottom: 15px;
+}
