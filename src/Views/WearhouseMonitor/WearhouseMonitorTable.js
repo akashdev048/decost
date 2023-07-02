@@ -1,9 +1,15 @@
 
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import "./wearhousemonitor-table.css";
 import { CDBTable, CDBTableHeader, CDBTableBody } from 'cdbreact';
 
-export const Table1 = () => {
+export const Table1 = ({data6}) => {
+
+
+  useEffect(() => {
+console.log("getting table data here", data6);
+  }, [data6])
+  
   return (
     <div className='warehouse-table'>
       <CDBTable className="border-0 table-listsuggest table-striped mb-0 table-head-sugest table-body-sugest">
@@ -17,43 +23,132 @@ export const Table1 = () => {
           </tr>
         </CDBTableHeader>
         <CDBTableBody>
+          { data6 && data6.map((data,index)=>(
           <tr>
-            <td className='eletab_txt_disc'>01</td>
-            <td className='eletab_txt_disc'>Call Produce</td>
-            <td className='eletab_txt_disc'>data science</td>
-            <td className='eletab_txt_disc'>Finance</td>
-            <td className='eletab_txt_disc'>1245</td>
-          </tr>
-          <tr>
-            <td className='eletab_txt_disc'>02</td>
-            <td className='eletab_txt_disc'>Select * from sales</td>
-            <td className='eletab_txt_disc'>compute wt</td>
-            <td className='eletab_txt_disc'>Operation</td>
-            <td className='eletab_txt_disc'>545</td>
-          </tr>
-          <tr>
-            <td className='eletab_txt_disc'>03</td>
-            <td className='eletab_txt_disc'>Insert init customer</td>
-            <td className='eletab_txt_disc'>compute wt</td>
-            <td className='eletab_txt_disc'>Operation</td>
-            <td className='eletab_txt_disc'>189</td>
-          </tr>
-          <tr>
-            <td className='eletab_txt_disc'>04</td>
-            <td className='eletab_txt_disc'>Insert init customer</td>
-            <td className='eletab_txt_disc'>compute wt</td>
-            <td className='eletab_txt_disc'>Operation</td>
-            <td className='eletab_txt_disc'>156</td>
-          </tr>
-          <tr>
-            <td className='eletab_txt_disc'>05</td>
-            <td className='eletab_txt_disc'>Insert init customer</td>
-            <td className='eletab_txt_disc'>compute wt</td>
-            <td className='eletab_txt_disc'>Operation</td>
-            <td className='eletab_txt_disc'>102</td>
-          </tr>
+          <td>{index+1}</td>
+          <td style={{overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap' ,width:'50px !important'}}>{data.QUERY_TEXT}</td>
+          <td>{data.WAREHOUSE}</td>
+          <td>{data.WORKLOAD}</td>
+          <td>{data.COST}</td>
+        </tr>
+          ))
+          }
         </CDBTableBody>
       </CDBTable>
     </div>
+    
   );
 };
+export const Table2 = ({data7}) =>{
+  useEffect(() => {
+    console.log("getting table data here", data7);
+      }, [data7])
+      console.log("getting table data here", data7);
+  return (
+    <div className='warehouse-table'>
+      <CDBTable>
+        <CDBTableHeader>
+          <tr>
+            <th>S.No</th>
+            <th>Query Text</th>
+            <th>Count</th>
+            <th>Warehouse</th>
+            <th>Workload</th>
+          </tr>
+        </CDBTableHeader>
+        <CDBTableBody>
+        {
+            data7 && data7.map((data,index)=>
+              <tr>
+              <td>{index+1}</td>
+              <td style={{overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{data.QUERY_TEXT}</td>
+              <td>{data.COUNT}</td>
+              <td>{data.WAREHOUSE}</td>
+              <td>{data.WORKLOAD}</td>
+            </tr>
+            
+            )
+         
+          }
+        
+        </CDBTableBody>
+      </CDBTable>
+    </div>
+    
+  );
+}
+export const Table3 = ({data8}) => {
+  useEffect(() => {
+    console.log("getting table data here", data8);
+      }, [data8])
+      console.log("getting table data here", data8);
+  return(
+<div className='warehouse-table'>
+      <CDBTable>
+        <CDBTableHeader>
+          <tr>
+            <th>S.No</th>
+            <th>Warehouse</th>
+            <th>Workload</th>
+          </tr>
+        </CDBTableHeader>
+        <CDBTableBody>
+          {
+            data8 && data8.map((data,index)=>
+              <tr>
+              <td>{index+1}</td>
+              <td>{data.WAREHOUSE}</td>
+              <td>{data.WORKLOAD}</td>
+            </tr>
+            
+            )
+         
+          }
+        </CDBTableBody>
+      </CDBTable>
+    </div>
+  )
+}
+export const Table4 = ({data5}) =>{
+
+  const[data,setData]=useState([])
+  useEffect(() => {
+    console.log("getting table data here", data5);
+    setData(data5)
+      }, [data5])
+      console.log("getting table data here", data5);
+
+  return(
+  <div className='warehouse-table'>
+      <CDBTable>
+        <CDBTableHeader>
+          <tr>
+            <th>Warehouse</th>
+            <th>Workload</th>
+            <th>Warehouse Size</th>
+            <th>Min Cluster</th>
+            <th>Max Cluster</th>
+            <th>Type</th>
+            <th>Auto Suspend</th>
+            <th>Auto Respond</th>
+          </tr>
+        </CDBTableHeader>
+        <CDBTableBody>
+          { data && data.map((data1)=>
+               <tr>
+               <td>{data1.Warehouse}</td>
+               <td>{data1.WORKLOAD}</td>
+               <td>{data1.Warehouse_Size}</td>
+               <td>{data1.Min_Cluster}</td>
+               <td>{data1.Max_Cluster}</td>
+               <td>{data1.Type}</td>
+               <td>{data1.Auto_Suspend}</td>
+               <td>{data1.Auto_Resume}</td>
+                </tr>
+          )
+}
+        </CDBTableBody>
+      </CDBTable>
+    </div>
+  )
+}
