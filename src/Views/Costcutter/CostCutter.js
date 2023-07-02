@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -12,8 +12,97 @@ import Chart from 'react-apexcharts'
 import dataChart from "../../assets/images/data-chart.png";
 import ReactApexChart from "react-apexcharts";
 
+let series = [
+  {
+    name: '14D MA',
+    type: 'line',
+    data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39, 20, 30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
+  },
+  {
+    name: '21D MA',
+    type: 'line',
+    data: [25, 20, 31, 25, 40, 30, 55, 45, 50, 30, 32, 33, 25, 20, 31, 25, 40, 30, 55, 45, 50, 30, 32]
+  },
+  {
+    name: '30D MA',
+    type: 'line',
+    data: [20, 40, 45, 28, 23, 55, 60, 45, 51, 30, 35, 40, 20, 40, 45, 28, 23, 55, 60, 45, 51, 30, 35]
+  }
+  ]
+  let series2 = [
+    {
+      name: '14D MA',
+      type: 'line',
+      data: [20, 40, 45, 28, 23, 55, 60, 45, 51, 30, 35, 40, 20, 40, 45, 28, 23, 55, 60, 45, 51, 30, 35]   
+     },
+    {
+      name: '21D MA',
+      type: 'line',
+      data: [25, 20, 31, 25, 40, 30, 55, 45, 50, 30, 32, 33, 25, 20, 31, 25, 40, 30, 55, 45, 50, 30, 32]
+    },
+    {
+      name: '30D MA',
+      type: 'line',
+      data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39, 20, 30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
+    }
+    ]
 
+    let series3 = [
+      {
+        name: '14D MA',
+        type: 'line',
+        data: [30, 40, 45, 38, 26, 55, 60, 65, 5, 30, 35, 46, 20, 40, 75, 28, 23, 55, 6, 45, 51, 30, 35]   
+       },
+      {
+        name: '21D MA',
+        type: 'line',
+        data: [27, 20, 31, 75, 40, 35, 55, 45, 30, 70, 32, 33, 65, 20, 32, 25, 47, 30, 55, 25, 50, 30, 32]
+      },
+      {
+        name: '30D MA',
+        type: 'line',
+        data: [60, 15, 26, 30, 41, 65, 64, 42, 59, 36, 59, 20, 80, 25, 36, 60, 45, 25, 64, 52, 29, 36, 39]
+      }
+      ]
+      let series4 = [
+        {
+          name: '14D MA',
+          type: 'line',
+          data: [60, 15, 26, 30, 41, 65, 64, 42, 59, 36, 59, 20, 80, 25, 36, 60, 45, 25, 64, 52, 29, 36, 39]
+        },
+        {
+          name: '21D MA',
+          type: 'line',
+          data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39, 20, 30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
+        },
+        {
+          name: '30D MA',
+          type: 'line',
+          data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39, 20, 30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
+        }
+        ]
 function CostCutter() {
+  const [selectedOption, setSelectedOption] = useState('series');
+  const [graphData,setGraphData]=useState(
+    [
+      {
+        name: '14D MA',
+        type: 'line',
+        data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39, 20, 30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
+      },
+      {
+        name: '21D MA',
+        type: 'line',
+        data: [25, 20, 31, 25, 40, 30, 55, 45, 50, 30, 32, 33, 25, 20, 31, 25, 40, 30, 55, 45, 50, 30, 32]
+      },
+      {
+        name: '30D MA',
+        type: 'line',
+        data: [20, 40, 45, 28, 23, 55, 60, 45, 51, 30, 35, 40, 20, 40, 45, 28, 23, 55, 60, 45, 51, 30, 35]
+      }
+      ]
+  )
+
   const chartData = {
     series: [78, 14],
     labels: ['Finance', 'Operation'],
@@ -31,7 +120,7 @@ function CostCutter() {
       position: 'bottom',
     },
     labels: chartData.labels,
-    colors: ['#16C098', '#D38B5D',  ],
+    colors: ['#896BF5', '#E1DBF8',  ],
     responsive: [
       {
         breakpoint: 480,
@@ -49,23 +138,75 @@ function CostCutter() {
   };
 
 
-  let series = [
-  {
-    name: '14D MA',
-    type: 'line',
-    data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39, 20, 30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
-  },
-  {
-    name: '21D MA',
-    type: 'line',
-    data: [25, 20, 31, 25, 40, 30, 55, 45, 50, 30, 32, 33, 25, 20, 31, 25, 40, 30, 55, 45, 50, 30, 32]
-  },
-  {
-    name: '30D MA',
-    type: 'line',
-    data: [20, 40, 45, 28, 23, 55, 60, 45, 51, 30, 35, 40, 20, 40, 45, 28, 23, 55, 60, 45, 51, 30, 35]
-  }
-  ]
+  // let series = [
+  // {
+  //   name: '14D MA',
+  //   type: 'line',
+  //   data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39, 20, 30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
+  // },
+  // {
+  //   name: '21D MA',
+  //   type: 'line',
+  //   data: [25, 20, 31, 25, 40, 30, 55, 45, 50, 30, 32, 33, 25, 20, 31, 25, 40, 30, 55, 45, 50, 30, 32]
+  // },
+  // {
+  //   name: '30D MA',
+  //   type: 'line',
+  //   data: [20, 40, 45, 28, 23, 55, 60, 45, 51, 30, 35, 40, 20, 40, 45, 28, 23, 55, 60, 45, 51, 30, 35]
+  // }
+  // ]
+  // let series2 = [
+  //   {
+  //     name: '14D MA',
+  //     type: 'line',
+  //     data: [20, 40, 45, 28, 23, 55, 60, 45, 51, 30, 35, 40, 20, 40, 45, 28, 23, 55, 60, 45, 51, 30, 35]   
+  //    },
+  //   {
+  //     name: '21D MA',
+  //     type: 'line',
+  //     data: [25, 20, 31, 25, 40, 30, 55, 45, 50, 30, 32, 33, 25, 20, 31, 25, 40, 30, 55, 45, 50, 30, 32]
+  //   },
+  //   {
+  //     name: '30D MA',
+  //     type: 'line',
+  //     data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39, 20, 30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
+  //   }
+  //   ]
+
+  //   let series3 = [
+  //     {
+  //       name: '14D MA',
+  //       type: 'line',
+  //       data: [30, 40, 45, 38, 26, 55, 60, 65, 5, 30, 35, 46, 20, 40, 75, 28, 23, 55, 6, 45, 51, 30, 35]   
+  //      },
+  //     {
+  //       name: '21D MA',
+  //       type: 'line',
+  //       data: [27, 20, 31, 75, 40, 35, 55, 45, 30, 70, 32, 33, 65, 20, 32, 25, 47, 30, 55, 25, 50, 30, 32]
+  //     },
+  //     {
+  //       name: '30D MA',
+  //       type: 'line',
+  //       data: [60, 15, 26, 30, 41, 65, 64, 42, 59, 36, 59, 20, 80, 25, 36, 60, 45, 25, 64, 52, 29, 36, 39]
+  //     }
+  //     ]
+  //     let series4 = [
+  //       {
+  //         name: '14D MA',
+  //         type: 'line',
+  //         data: [60, 15, 26, 30, 41, 65, 64, 42, 59, 36, 59, 20, 80, 25, 36, 60, 45, 25, 64, 52, 29, 36, 39]
+  //       },
+  //       {
+  //         name: '21D MA',
+  //         type: 'line',
+  //         data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39, 20, 30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
+  //       },
+  //       {
+  //         name: '30D MA',
+  //         type: 'line',
+  //         data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39, 20, 30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
+  //       }
+  //       ]
 
 
   let options = {
@@ -118,7 +259,28 @@ function CostCutter() {
       min: 0
     }
   }
+  const handleRadioChange = (event) => {
+    if (event.target.value === 'QUERY') {
+      setGraphData(series
+      
+      )
+    }else if (event.target.value === 'timeration'){
+      setGraphData(series2
+      
+        )
 
+    }else if (event.target.value === 'averageLoad'){
+      setGraphData(series3
+      
+        )
+    }else if (event.target.value === 'averageRun'){
+      setGraphData(series4
+      
+        )
+    }
+    console.log(event.target.value,'hi')
+     setSelectedOption(event.target.value);
+  };
 
   return (
     <Col>
@@ -154,40 +316,40 @@ function CostCutter() {
                                 <Table responsive className='border-0 table-list-wap mb-0'>
                                   <thead className='table-head'>
                                     <tr>
-                                      <th className='t-head ps-4'>Schema</th>
-                                      <th className='t-head'>peak_month </th>
-                                      <th className='t-head'>peak_week</th>
-                                      <th className='t-head'>peak_day</th>
-                                      <th className='t-head'>peak_hour</th>
+                                      <th className='t-head ps-4 tableheading '>Schema</th>
+                                      <th className='t-head tableheading' >peak_month </th>
+                                      <th className='t-head tableheading'>peak_week</th>
+                                      <th className='t-head tableheading'>peak_day</th>
+                                      <th className='t-head tableheading'>peak_hour</th>
                                     </tr>
                                   </thead>
                                   <tbody className='table-body'>
                                     <tr>
-                                      <td className='td-disc'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
-                                      <td className='td-disc'>Dec</td>
-                                      <td className='td-disc'>Dec 1st week</td>
-                                      <td className='td-disc'>Dec 7</td>
-                                      <td className='td-disc'>Dec 7, 13:00</td>
+                                      <td className='td-disc tableData'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
+                                      <td className='td-disc tableData'>Dec</td>
+                                      <td className='td-disc tableData'>Dec 1st week</td>
+                                      <td className='td-disc tableData'>Dec 7</td>
+                                      <td className='td-disc tableData'>Dec 7, 13:00</td>
                                     </tr>
                                     <tr>
-                                      <td className='td-disc'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
-                                      <td className='td-disc'>Dec</td>
-                                      <td className='td-disc'>Dec 1st week</td>
-                                      <td className='td-disc'>Dec 7</td>
-                                      <td className='td-disc'>Dec 7, 13:00</td>
+                                      <td className='td-disc tableData'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
+                                      <td className='td-disc tableData'>Dec</td>
+                                      <td className='td-disc tableData'>Dec 1st week</td>
+                                      <td className='td-disc tableData'>Dec 7</td>
+                                      <td className='td-disc tableData'>Dec 7, 13:00</td>
                                     </tr>
                                     <tr>
-                                      <td className='td-disc'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
-                                      <td className='td-disc'>Dec</td>
-                                      <td className='td-disc'>Dec 1st week</td>
-                                      <td className='td-disc'>Dec 7</td>
-                                      <td className='td-disc'>Dec 7, 13:00</td>
+                                      <td className='td-disc tableData'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
+                                      <td className='td-disc tableData'>Dec</td>
+                                      <td className='td-disc tableData'>Dec 1st week</td>
+                                      <td className='td-disc tableData'>Dec 7</td>
+                                      <td className='td-disc tableData'>Dec 7, 13:00</td>
                                     </tr>
                                   </tbody>
                                 </Table>
                               </div>
                               <div className='bottom-cut--off mt-2'>
-                                <button type="button" className='btn btn-cost-wgt'>Cut cost</button>
+                                {/* <button type="button" className='btn btn-cost-wgt'>Cut cost</button> */}
                               </div>
                             </div>
                           </div>
@@ -235,31 +397,31 @@ function CostCutter() {
                                   </thead>
                                   <tbody className='table-body'>
                                     <tr>
-                                      <td className='td-disc'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
-                                      <td className='td-disc'>Dec</td>
-                                      <td className='td-disc'>Dec 1st week</td>
-                                      <td className='td-disc'>Dec 7</td>
-                                      <td className='td-disc'>Dec 7, 13:00</td>
+                                      <td className='td-disc tableData'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
+                                      <td className='td-disc tableData'>Dec</td>
+                                      <td className='td-disc tableData'>Dec 1st week</td>
+                                      <td className='td-disc tableData'>Dec 7</td>
+                                      <td className='td-disc tableData'>Dec 7, 13:00</td>
                                     </tr>
                                     <tr>
-                                      <td className='td-disc'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
-                                      <td className='td-disc'>Dec</td>
-                                      <td className='td-disc'>Dec 1st week</td>
-                                      <td className='td-disc'>Dec 7</td>
-                                      <td className='td-disc'>Dec 7, 13:00</td>
+                                      <td className='td-disc tableData'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
+                                      <td className='td-disc tableData'>Dec</td>
+                                      <td className='td-disc tableData'>Dec 1st week</td>
+                                      <td className='td-disc tableData'>Dec 7</td>
+                                      <td className='td-disc tableData'>Dec 7, 13:00</td>
                                     </tr>
                                     <tr>
-                                      <td className='td-disc'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
-                                      <td className='td-disc'>Dec</td>
-                                      <td className='td-disc'>Dec 1st week</td>
-                                      <td className='td-disc'>Dec 7</td>
-                                      <td className='td-disc'>Dec 7, 13:00</td>
+                                      <td className='td-disc tableData'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
+                                      <td className='td-disc tableData'>Dec</td>
+                                      <td className='td-disc tableData'>Dec 1st week</td>
+                                      <td className='td-disc tableData'>Dec 7</td>
+                                      <td className='td-disc tableData'>Dec 7, 13:00</td>
                                     </tr>
                                   </tbody>
                                 </Table>
                               </div>
                               <div className='bottom-cut--off mt-2'>
-                                <button type="button" className='btn btn-cost-wgt'>Cut cost</button>
+                                {/* <button type="button" className='btn btn-cost-wgt'>Cut cost</button> */}
                               </div>
                             </div>
                           </div>
@@ -307,31 +469,31 @@ function CostCutter() {
                                   </thead>
                                   <tbody className='table-body'>
                                     <tr>
-                                      <td className='td-disc'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
-                                      <td className='td-disc'>Dec</td>
-                                      <td className='td-disc'>Dec 1st week</td>
-                                      <td className='td-disc'>Dec 7</td>
-                                      <td className='td-disc'>Dec 7, 13:00</td>
+                                      <td className='td-disc tableData'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
+                                      <td className='td-disc tableData'>Dec</td>
+                                      <td className='td-disc tableData'>Dec 1st week</td>
+                                      <td className='td-disc tableData'>Dec 7</td>
+                                      <td className='td-disc tableData'>Dec 7, 13:00</td>
                                     </tr>
                                     <tr>
-                                      <td className='td-disc'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
-                                      <td className='td-disc'>Dec</td>
-                                      <td className='td-disc'>Dec 1st week</td>
-                                      <td className='td-disc'>Dec 7</td>
-                                      <td className='td-disc'>Dec 7, 13:00</td>
+                                      <td className='td-disc tableData'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
+                                      <td className='td-disc tableData'>Dec</td>
+                                      <td className='td-disc tableData'>Dec 1st week</td>
+                                      <td className='td-disc tableData'>Dec 7</td>
+                                      <td className='td-disc tableData '>Dec 7, 13:00</td>
                                     </tr>
                                     <tr>
-                                      <td className='td-disc'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
-                                      <td className='td-disc'>Dec</td>
-                                      <td className='td-disc'>Dec 1st week</td>
-                                      <td className='td-disc'>Dec 7</td>
-                                      <td className='td-disc'>Dec 7, 13:00</td>
+                                      <td className='td-disc tableData'><span className='txt-wgt-sch'><input type='checkbox' className='me-1' />Load Layer</span></td>
+                                      <td className='td-disc tableData'>Dec</td>
+                                      <td className='td-disc tableData'>Dec 1st week</td>
+                                      <td className='td-disc tableData'>Dec 7</td>
+                                      <td className='td-disc tableData'>Dec 7, 13:00</td>
                                     </tr>
                                   </tbody>
                                 </Table>
                               </div>
                               <div className='bottom-cut--off mt-2'>
-                                <button type="button" className='btn btn-cost-wgt'>Cut cost</button>
+                                {/* <button type="button" className='btn btn-cost-wgt'>Cut cost</button> */}
                               </div>
                             </div>
                           </div>
@@ -409,14 +571,39 @@ function CostCutter() {
                         <div className='card card-height-wigt mb-4'>
                           <div className='card-header bg-white py-3'>
                             <div className='check-multiweb d-flex justify-content-end'>
-                              <span className='check-list-box'><input type='radio' className='check-input-tw' />QUERY RATIO</span>
-                              <span className='check-list-box'><input type='radio' className='check-input-tw' />TIME RATIO</span>
-                              <span className='check-list-box'><input type='radio' className='check-input-tw' />AVG_QUEUE_LOAD</span>
-                              <span className='check-list-box'><input type='radio' className='check-input-tw' />AVG_RUNNING</span>
+                              <span className='check-list-box'><input type='radio' className='check-input-tw' 
+                               onChange={handleRadioChange}
+                               checked={selectedOption === 'QUERY'}
+
+                               value="QUERY"
+                              />QUERY RATIO</span>
+                              <span className='check-list-box'><input type='radio' className='check-input-tw' 
+                                                             value="timeration"
+                                                             checked={selectedOption === 'timeration'}
+
+                                                             onChange={handleRadioChange}
+
+
+                              />TIME RATIO</span>
+                              <span className='check-list-box'><input type='radio' className='check-input-tw' 
+                                                             value="averageLoad"
+                                                             checked={selectedOption === 'averageLoad'}
+
+                                                             onChange={handleRadioChange}
+
+                                                             />AVG_QUEUE_LOAD</span>
+                              <span className='check-list-box'><input type='radio' className='check-input-tw' 
+                                                             value="averageRun"
+                                                             checked={selectedOption === 'averageRun'}
+
+                                                             onChange={handleRadioChange}
+
+
+                              />AVG_RUNNING</span>
                             </div>
                           </div>
                           <div className='card-body'>
-                          <ReactApexChart options={options} series={series} type="line" height={450} />
+                          <ReactApexChart options={options} series={graphData} type="line" height={450} />
 
                           </div>
                         </div>
@@ -438,12 +625,16 @@ function CostCutter() {
                               </thead>
                               <tbody className='table-body-sugest'>
                                 <tr>
-                                  <td className='eletab_txt_disc'>Less than second</td>
-                                  <td className='eletab_txt_disc'>359</td>
+                                  <td className='eletab_txt_disc'>Less than 1 second</td>
+                                  <td className='eletab_txt_disc'>885</td>
                                 </tr>
                                 <tr>
                                   <td className='eletab_txt_disc'>1-5 seconds</td>
-                                  <td className='eletab_txt_disc'>22</td>
+                                  <td className='eletab_txt_disc'>12</td>
+                                </tr>
+                                <tr>
+                                  <td className='eletab_txt_disc'>5-10 seconds</td>
+                                  <td className='eletab_txt_disc'>6</td>
                                 </tr>
                                 <tr>
                                   <td className='eletab_txt_disc'>more than 2 minutes</td>
@@ -468,14 +659,14 @@ function CostCutter() {
                               </thead>
                               <tbody className='table-body-sugest'>
                                 <tr>
-                                  <td className='eletab_txt_disc'>1 batch-elt</td>
-                                  <td className='eletab_txt_disc'>430</td>
-                                  <td className='eletab_txt_disc'>4000</td>
+                                  <td className='eletab_txt_disc'>CLOUD_SERVICES_ONLY</td>
+                                  <td className='eletab_txt_disc'>0.000330001</td>
+                                  <td className='eletab_txt_disc'>0.000330001</td>
                                 </tr>
                                 <tr>
-                                  <td className='eletab_txt_disc'>2 datascience</td>
-                                  <td className='eletab_txt_disc'>570</td>
-                                  <td className='eletab_txt_disc'>5500</td>
+                                  <td className='eletab_txt_disc'>DATA SCERVICE</td>
+                                  <td className='eletab_txt_disc'>5.725180</td>
+                                  <td className='eletab_txt_disc'>5.259500</td>
                                 </tr>
                               </tbody>
                             </Table>
@@ -504,7 +695,7 @@ function CostCutter() {
                               </thead>
                               <tbody className='table-body-sugest'>
                                 <tr>
-                                  <td className='eletab_txt_disc'>01ab0d09-0b</td>
+                                  <td className='eletab_txt_disc'>01ad5b40-0a04</td>
                                   <td className='eletab_txt_disc'>1024</td>
                                   <td className='eletab_txt_disc'>SELECT WMH_...</td>
                                   <td className='eletab_txt_disc'>data_science</td>
@@ -513,21 +704,21 @@ function CostCutter() {
                                   <td className='eletab_txt_disc'>18,890,368</td>
                                 </tr>
                                 <tr>
-                                  <td className='eletab_txt_disc'>01ab0d09-0b</td>
+                                  <td className='eletab_txt_disc'>0b04-b0c1-0000</td>
                                   <td className='eletab_txt_disc'>1024</td>
-                                  <td className='eletab_txt_disc'>SELECT WMH_...</td>
-                                  <td className='eletab_txt_disc'>data_science</td>
-                                  <td className='eletab_txt_disc'>13,617</td>
-                                  <td className='eletab_txt_disc'>3,080</td>
-                                  <td className='eletab_txt_disc'>18,890,368</td>
+                                  <td className='eletab_txt_disc'>"with cte as select_...</td>
+                                  <td className='eletab_txt_disc'>RT_DEV_WH</td>
+                                  <td className='eletab_txt_disc'>10,617</td>
+                                  <td className='eletab_txt_disc'>3080</td>
+                                  <td className='eletab_txt_disc'>18,890</td>
                                 </tr>
                                 <tr>
-                                  <td className='eletab_txt_disc'>01ab0d09-0b</td>
-                                  <td className='eletab_txt_disc'>1024</td>
+                                  <td className='eletab_txt_disc'>9ed100aa148a</td>
+                                  <td className='eletab_txt_disc'>14</td>
                                   <td className='eletab_txt_disc'>SELECT WMH_...</td>
                                   <td className='eletab_txt_disc'>data_science</td>
                                   <td className='eletab_txt_disc'>13,617</td>
-                                  <td className='eletab_txt_disc'>3,080</td>
+                                  <td className='eletab_txt_disc'>10.43</td>
                                   <td className='eletab_txt_disc'>18,890,368</td>
                                 </tr>
                                 <tr>
