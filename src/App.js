@@ -22,15 +22,15 @@ function App(props) {
     <div className="App">
       
       <SideBar />
-
-       <Routes>
-          <Route path="/" element={<Dashboard />}  />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/monitors" element={<Monitors />}/>
-          <Route path="/cost-cutter" element={<CostCutter />}/>
-
-
-       </Routes>
+        <div className='content-wrapper-div'>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/monitors" element={<Monitors />} />
+            <Route path="/cost-cutter" element={<CostCutter />} />
+          </Routes>
+        </div>
+      
 
       {/* <Router>
         <Switch>

@@ -75,58 +75,49 @@ const Monitors = () => {
 
     <div className="monito-section">
       <Container fluid>
-        <Row>
-          <Col>
-            <Tabs
-            >
-              <Tab eventKey="job-monitor" title="job-monitor">
-                <div className="heading-bar-top mt-3"><h2 className="title-main-wgt">Overall Cost summary </h2></div>
-                <Row>
-                  <Col className="col-12 col-lg-3 col-xl-2">
-                    <div className="card mb-2">
-                      <div className="card-body">
-                        <div className="wg-elemnt-mt"><h3 class="small-title-wgt">Average Montly Cost</h3><p><b>14,566</b></p></div>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col className="col-12 col-lg-3 col-xl-2">
-                    <div className="card mb-2">
-                      <div className="card-body">
-                        <div className="wg-elemnt-mt"><h3 class="small-title-wgt">Minimum Montly Cost</h3><p><b>14,566</b></p></div>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col className="col-12 col-lg-3 col-xl-2">
-                    <div className="card mb-2">
-                      <div className="card-body">
-                        <div className="wg-elemnt-mt"><h3 class="small-title-wgt">Maximum Montly Cost</h3><p><b>14,566</b></p></div>
-                      </div>
-                    </div>
-                  </Col>
-                </Row>
-                <div className="card mb-2">
-                  <div className="card-body">
-                    <div className="wg-elemnt-mt"><StackChart /></div>
+        <Tabs className="mb-3">
+          <Tab eventKey="job-monitor" title="job-monitor">
+            <div className="heading-bar-top mt-3"><h2 className="title-main-wgt">Overall Cost summary </h2></div>
+            <Row>
+              <Col className="col-12 col-lg-3 col-xl-2">
+                <div className="card cardequal-ht">
+                  <div className="card-body px-2">
+                    <div className="wg-elemnt-mt"><h3 class="small-title-wgt">Average Montly Cost</h3><p><b>14,566</b></p></div>
                   </div>
-                </div>                
-                <Row className="table-container ww">
-                  <Col>
-                    <MonitorTable />
-                  </Col>
-                </Row>
-              </Tab>
-              <Tab eventKey="Warehouse Monitor" title="Warehouse Monitor">
-                <WearhouseMonitor />
-              </Tab>
-            </Tabs>
-          </Col>
-        </Row>
+                </div>
+              </Col>
+              <Col className="col-12 col-lg-3 col-xl-2">
+                <div className="card cardequal-ht">
+                  <div className="card-body px-2">
+                    <div className="wg-elemnt-mt"><h3 class="small-title-wgt">Minimum Montly Cost</h3><p><b>14,566</b></p></div>
+                  </div>
+                </div>
+              </Col>
+              <Col className="col-12 col-lg-3 col-xl-2">
+                <div className="card cardequal-ht">
+                  <div className="card-body px-2">
+                    <div className="wg-elemnt-mt"><h3 class="small-title-wgt">Maximum Montly Cost</h3><p><b>14,566</b></p></div>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+            <div className="card mb-2">
+              <div className="card-body">
+                <div className="wg-elemnt-mt"><StackChart /></div>
+              </div>
+            </div>
+            <Row className="table-container ww">
+              <Col>
+                <MonitorTable />
+              </Col>
+            </Row>
+          </Tab>
+          <Tab eventKey="Warehouse Monitor" title="Warehouse Monitor">
+            <WearhouseMonitor />
+          </Tab>
+        </Tabs>
       </Container>
     </div>
-
-
-
-
   )
 }
 

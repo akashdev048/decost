@@ -1,1 +1,0 @@
-export const SELLER_TICKET = "SELLER_TICKET";

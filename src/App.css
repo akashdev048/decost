@@ -49,3 +49,10 @@ img{
     transform: rotate(360deg);
   }
 }
+
+.content-wrapper-div {
+  padding: 15px 20px 40px 20px;
+  height: calc(100vh - 68px);
+  overflow: auto;
+  width: 100%;
+}

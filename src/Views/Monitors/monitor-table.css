@@ -17,6 +17,6 @@ table {
      padding: 12px; 
   }
   
-  tr:nth-child(even) {
+  /* tr:nth-child(even) {
     background-color: #F8FAFB;
-  }
+  } */

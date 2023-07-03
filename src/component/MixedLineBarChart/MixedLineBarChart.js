@@ -1,135 +1,94 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 
-import Chart from 'react-apexcharts';
-
-
+import ReactApexChart from "react-apexcharts";
 
 
-const MixedLineBarChart = () => {
 
-  const chartOptions = {
 
-    options: {
+const MixedLineBarChart = ({data1,data2,data3,data4}) => {
 
-      chart: {
+  useEffect(() => {
+ console.log("data 1 gettins", data1);
+  }, [data1,data2,data3,data4])
 
-        id: 'combo-chart',
-        toolbar: {
-            show: false, // Set show property to false
-          },
-      },
+  let series = [
+    {
+    name: '7D MA',
+    type: 'column',
+    data: data1.length!==0 ? Object.values(data1.COST): [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30, 34, 23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30]
+  },
+  {
+    name: '14D MA',
+    type: 'line',
+    data: data2.length!==0? Object.values(data2.COST_USED_7_DAY_AVG): [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39, 20, 30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
+  },
+  {
+    name: '21D MA',
+    type: 'line',
+    data: data3.length!==0? Object.values(data3.COST_USED_14_DAY_AVG): [25, 20, 31, 25, 40, 30, 55, 45, 50, 30, 32, 33, 25, 20, 31, 25, 40, 30, 55, 45, 50, 30, 32]
+  },
+  {
+    name: '30D MA',
+    type: 'line',
+    data: data4.length!==0? Object.values(data4.COST_USED_21_DAY_AVG): [20, 40, 45, 28, 23, 55, 60, 45, 51, 30, 35, 40, 20, 40, 45, 28, 23, 55, 60, 45, 51, 30, 35]
+  }
+  ]
 
-      colors: ['#DF96A3', '#C5C533','#2A952A','#9C8F9B'], // Specify the colors for columns and curves
 
-      xaxis: {
-
-        categories: ['1 jan 2022', '4 jan 2022', '6 jan 2022', '1 jan 2022', '1 jan 2022','1 jan 2022', '1 jan 2022', '1 jan 2022', '1 jan 2022', '1 jan 2022', '1 jan 2022', '1 jan 2022'],
-
-        labels: {
-
-            style: {
-
-                fontSize: '12px', // Adjust label font size
-
-              },
-
-          },
-
-      },
-
-      stroke: {
-
-                    // width: [0, 4],
-
-                    curve: 'smooth'
-
-       
-
-                  },
-
-      plotOptions: {
-
-        bar: {
-
-          columnWidth: '15%', // Adjust the column width here
-
-          startingShape: 'flat', // Set the starting shape to flat
-
-          endingShape: 'flat', // Set the ending shape to flat
-
-          horizontal: false, // Set horizontal to false for vertical columns
-
-        },
-
-      },
-
+  let options = {
+    chart: {
+      height: 350,
+      type: 'line',
+      stacked: false,
+      toolbar: {
+        show: false
+      }
     },
-
-    series: [
-
-      {
-
-        name: '21D MA',
-
-        type: 'column',
-
-        data: [44, 55, 41, 67, 22,79,98,56,34,12,90,107],
-
-      },
-
-      {
-
-        name: '14D MA',
-
-        type: 'line',
-
-        data: [30, 40, 35, 50, 49,55,48,31,85,61,1,50],
-
-      },
-      {
-
-        name: '7D MA',
-
-        type: 'line',
-
-        data: [30, 40, 45, 40, 79,98,67,54,9,32,88,10],
-
-      },
-      {
-
-        name: '7D MA',
-
-        type: 'line',
-
-        data: [30, 40, 45, 40, 65,46,98,34,87,60,40,40,40],
-
-      },
+    legend: {
+      show: true,
+      position: 'bottom',
+    },
+    stroke: {
+      width: [2, 2, 2],
+      curve: 'smooth'
+    },
+    plotOptions: {
+      bar: {
+        columnWidth: '50%'
+      }
+    },
+    colors: ["#9C8F9B", "#C5C533", "#2A952A", "#DF96A3"],
 
 
+    labels: data1.length!==0 ? Object.values(data1.DATE): ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6',
+      'Day 7', 'Day 8', 'Day 9', 'Day 10', 'Day 11', 'Day 12', 'Day 13',
+      'Day 14', 'Day 15', 'Day 16', 'Day 17', 'Day 18', 'Day 19', 'Day 20', 'Day 21', 'Day 22', 'Day 23'
     ],
 
-  };
-
-
+    markers: {
+      size: 0
+    },
+    xaxis: {
+      labels: {
+        rotate: -45
+      },
+      categories: data1.length!==0 ? Object.values(data1.DATE): ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6',
+        'Day 7', 'Day 8', 'Day 9', 'Day 10', 'Day 11', 'Day 12', 'Day 13',
+        'Day 14', 'Day 15', 'Day 16', 'Day 17', 'Day 18', 'Day 19', 'Day 20', 'Day 21', 'Day 22', 'Day 23'
+      ],
+      tickPlacement: 'on'
+    },
+    yaxis: {
+      title: {
+        text: 'COST',
+      },
+      min: 0
+    }
+  }
 
 
   return (
-
-    <Chart
-
-      options={chartOptions.options}
-
-      series={chartOptions.series}
-
-      type="line"
-
-      height={400}
-
-
-      width={600}
-
-    />
-
+    <ReactApexChart options={options} series={series} type="line" height={450} />
   );
 
 };
