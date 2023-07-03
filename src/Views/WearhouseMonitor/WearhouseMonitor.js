@@ -26,7 +26,7 @@ const wareHouseWithoutResourceMonitor =
 
 function WearhouseMonitor() {
   const [dropdown, setDropdown] = useState([]);
-  const[dropdownVal,setDropdownVal] = useState('')
+  const [dropdownVal, setDropdownVal] = useState('')
 
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
@@ -38,7 +38,7 @@ function WearhouseMonitor() {
   const [data8, setData8] = useState([]);
 
   useEffect(() => {
-    axios.get(warehouseDropdown).then(response=>{
+    axios.get(warehouseDropdown).then(response => {
       setDropdown(Object.values(response.data));
     })
     promiseExecution2();
@@ -58,13 +58,13 @@ function WearhouseMonitor() {
           data7,
           data8,
         ]) => {
-          console.log("data from table api", data6,data7,data8);
+          console.log("data from table api", data6, data7, data8);
           setData6(data6);
           setData7(data7);
           setData8(data8);
         }
       )
-      .catch((error) => {});
+      .catch((error) => { });
   };
 
   const fetchTableData = async (url) => {
@@ -78,12 +78,12 @@ function WearhouseMonitor() {
 
 
 
-  const getCall =(dropdownVal) => {
+  const getCall = (dropdownVal) => {
 
     const generateUrl = (baseUrl) => {
       return `${baseUrl}${dropdownVal}`;
     };
-  
+
     const fetchData = async (url) => {
       const response = await fetch(generateUrl(url));
       if (!response.ok) {
@@ -91,7 +91,7 @@ function WearhouseMonitor() {
       }
       return response.json();
     };
-  
+
     let promiseExecution1 = () => {
       Promise.all([
         fetchData(barChart),
@@ -116,121 +116,99 @@ function WearhouseMonitor() {
             setData5(data5)
           }
         )
-        .catch((error) => {});
+        .catch((error) => { });
     };
     promiseExecution1()
   }
-    
 
-  const handleDropdownSelect =(e)=>{
-console.log("event target", e.target.value);
-setDropdownVal(e.target.value)
-getCall(e.target.value)
+
+  const handleDropdownSelect = (e) => {
+    console.log("event target", e.target.value);
+    setDropdownVal(e.target.value)
+    getCall(e.target.value)
 
   }
   return (
     <>
       <Row>
         <Col className="col-12 col-lg-7 col-xl-7 mb-4">
-          <div
-            className="col-div-wrapper"
-            style={{
-              boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-              height: "100%",
-            }}
-          >
-            <div style={{ marginLeft: "-227px" }}>
-              Wearhouse cost for last 23 days
-              <select onChange={handleDropdownSelect}>
-                {dropdown && dropdown.map((value) => <option>{value}</option>)}
-              </select>
+          <div className='card'>
+            <div className='card-header bg-white py-3'>
+              <div className="d-flex align-items-cener justify-content-between">
+                <h3 className="title-wg-yth">Warehouse cost for last 23 days</h3>
+                <div className="selct-option">
+                  <select className="select-opt-ware-h form-control" onChange={handleDropdownSelect}>
+                    {dropdown && dropdown.map((value) => <option>{value}</option>)}
+                  </select>
+                </div>
+              </div>
             </div>
-            <MixedLineBarChart
-            data1={data1}
-            data2={data2}
-            data3={data3}
-            data4={data4}
-            />
+            <div className='card-body'>
+              <MixedLineBarChart
+                data1={data1}
+                data2={data2}
+                data3={data3}
+                data4={data4}
+              />
+            </div>
           </div>
         </Col>
         <Col className="col-12 col-lg-5 col-xl-5 mb-4">
-          <div
-            className="col-div-wrapper mb-4"
-            style={{
-              boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-              height: "45%",
-              minHeight: "240px",
-              overflowY: 'scroll',
-              height: '50px'
-            }}
-          >
-            <Table1 
-            data6={data6}
-            />
-            {/* <Table4 /> */}
+          <div className='card mb-3'>
+            <div className='card-header bg-white py-3'>
+              <h3 className="title-wg-yth">Top 25 Jobs</h3>
+            </div>
+            <div className='card-body p-0'>
+              <Table1
+                data6={data6}
+              />
+              {/* <Table4 /> */}
+            </div>
           </div>
-          <div
-            className="col-div-wrapper"
-            style={{
-              boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-              height: "51%",
-              minHeight: "240px",
-              marginTop:'0px',
-              overflowY: 'scroll',
-              height: '50px'
-            }}
-          >
-            <Table2 
-            data7={data7}
-            />
+          <div className='card'>
+            <div className='card-header bg-white py-3'>
+              <h3 className="title-wg-yth">Repetitive jobs</h3>
+            </div>
+            <div className='card-body'>
+              <Table2
+                data7={data7}
+              />
+            </div>
           </div>
         </Col>
       </Row>
-      <Row>
-        <Col
-          style={{
-            boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-            minHeight: "240px",
-            height: "50%",
-            overflowY: 'scroll',
-          }}
-          className="mb-4"
-        >
-          <div
-            className="col-div-wrapper"
-            style={{
-              boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-              height: "50%",
-              minHeight: "240px",
-              height:'225px',
-              width:'674px',
-              overflowY: 'scroll',
 
-            }}
-          >
-            <Table4 data5={data5}/>
+      <Row>
+        <Col className="col-12 col-lg-7 col-xl-7">
+          <div className='card'>
+            <div className='card-header bg-white py-3'>
+              <h3 className="title-wg-yth">Warehouse Configuration</h3>
+            </div>
+            <div className='card-body p-0'>
+              <Table4 data5={data5} />
+            </div>
           </div>
         </Col>
-        <Col
-          className="col-12 col-lg-5 col-xl-5 mb-4"
-          style={{ minHeight: "240px" }}
-        >
-          <div
-            className="col-div-wrapper"
-            style={{
-              boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-              height: "50%",
-              minHeight: "240px",
-              overflowY: 'scroll',
-              height: '50px'
-            }}
-          >
-            <Table3
-            data8={data8}
-            />
+        <Col className="col-12 col-lg-5 col-xl-5">
+          <div className='card'>
+            <div className='card-header bg-white py-3'>
+              <h3 className="title-wg-yth">Warehouse without Resource Monitor</h3>
+            </div>
+            <div className='card-body p-0'>
+              <Table1 /><Table3
+                data8={data8}
+              />
+            </div>
           </div>
         </Col>
       </Row>
+
+
+
+
+
+
+      
     </>
   );
 }

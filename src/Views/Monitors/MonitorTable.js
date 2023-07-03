@@ -7,7 +7,7 @@ function MonitorTable() {
       <table >
         <thead>
           <th>Workload</th>
-          <th>Workload_Schema</th>
+          <th>Workload Schema</th>
           <th>Query text</th>
           <th>Warehouse</th>
           <th>Role</th>
@@ -20,220 +20,102 @@ function MonitorTable() {
         </thead>
         <tbody>
           <tr>
-            <td>Finance</td>
+            <td>Operation</td>
 
-            <td>Prod_layer</td>
+            <td>Prod layer</td>
 
-            <td>Call Proceducer ML_Xbox1()</td>
+            <td>Call Proceducer ML Xbox1()</td>
 
-            <td>Data_science</td>
+            <td>Data science</td>
 
-            <td>prd_data_scientist</td>
+            <td>prd data scientist</td>
 
-            <td>andre mern</td>
+            <td>Mukunthan</td>
 
-            <td>29/06/2023</td>
-
-            <td>21:48</td>
+            <td>18/01/2023</td>
 
             <td>30/06/2023</td>
 
-            <td>40</td>
+            <td>240</td>
 
-            <td>01aa47ff</td>
+            <td>257</td>
+
+            <td>49055</td>
 
           </tr>
           <tr>
             <td>Finance</td>
 
-            <td>Prod_layer</td>
+            <td>Prod layer</td>
 
-            <td>Call Proceducer ML_Xbox1()</td>
+            <td>Call Proceducer ML Xbox1()</td>
 
             <td>Data_science</td>
 
-            <td>prd_data_scientist</td>
+            <td>prd data scientist</td>
 
             <td>andre mern</td>
 
             <td>29/06/2023</td>
 
-            <td>21:48</td>
+            <td>20/06/2023</td>
 
-            <td>30/06/2023</td>
+            <td>400</td>
 
             <td>40</td>
 
-            <td>01aa47ff</td>
+            <td>56788</td>
 
           </tr>
           <tr>
-            <td>Finance</td>
+            <td>Wall</td>
 
-            <td>Prod_layer</td>
+            <td>Islands</td>
 
-            <td>Call Proceducer ML_Xbox1()</td>
+            <td>Call Proceducer ML Xbox1()</td>
 
             <td>Data_science</td>
 
-            <td>prd_data_scientist</td>
+            <td>prd data scientist</td>
 
             <td>andre mern</td>
 
-            <td>29/06/2023</td>
-
-            <td>21:48</td>
+            <td>29/01/2023</td>
 
             <td>30/06/2023</td>
 
-            <td>40</td>
+            <td>678</td>
 
-            <td>01aa47ff</td>
+            <td>567</td>
+
+            <td>76488</td>
 
           </tr>
           <tr>
-            <td>Finance</td>
+            <td>Sales </td>
 
-            <td>Prod_layer</td>
+            <td>Rep layer</td>
 
-            <td>Call Proceducer ML_Xbox1()</td>
+            <td>Call Proceducer ML Xbox2()</td>
 
-            <td>Data_science</td>
+            <td>batch elt</td>
 
-            <td>prd_data_scientist</td>
+            <td>loader </td>
 
-            <td>andre mern</td>
+            <td>John</td>
 
-            <td>29/06/2023</td>
+            <td>01/01/2023</td>
 
-            <td>21:48</td>
+            <td>23/04/2023</td>
 
-            <td>30/06/2023</td>
+            <td>455</td>
 
-            <td>40</td>
+            <td>60</td>
 
-            <td>01aa47ff</td>
-
-          </tr>
-          <tr>
-            <td>Finance</td>
-
-            <td>Prod_layer</td>
-
-            <td>Call Proceducer ML_Xbox1()</td>
-
-            <td>Data_science</td>
-
-            <td>prd_data_scientist</td>
-
-            <td>andre mern</td>
-
-            <td>29/06/2023</td>
-
-            <td>21:48</td>
-
-            <td>30/06/2023</td>
-
-            <td>40</td>
-
-            <td>01aa47ff</td>
+            <td>7678</td>
 
           </tr>
-          <tr>
-            <td>Finance</td>
 
-            <td>Prod_layer</td>
-
-            <td>Call Proceducer ML_Xbox1()</td>
-
-            <td>Data_science</td>
-
-            <td>prd_data_scientist</td>
-
-            <td>andre mern</td>
-
-            <td>29/06/2023</td>
-
-            <td>21:48</td>
-
-            <td>30/06/2023</td>
-
-            <td>40</td>
-
-            <td>01aa47ff</td>
-
-          </tr>
-          <tr>
-            <td>Finance</td>
-
-            <td>Prod_layer</td>
-
-            <td>Call Proceducer ML_Xbox1()</td>
-
-            <td>Data_science</td>
-
-            <td>prd_data_scientist</td>
-
-            <td>andre mern</td>
-
-            <td>29/06/2023</td>
-
-            <td>21:48</td>
-
-            <td>30/06/2023</td>
-
-            <td>40</td>
-
-            <td>01aa47ff</td>
-
-          </tr>
-          <tr>
-            <td>Finance</td>
-
-            <td>Prod_layer</td>
-
-            <td>Call Proceducer ML_Xbox1()</td>
-
-            <td>Data_science</td>
-
-            <td>prd_data_scientist</td>
-
-            <td>andre mern</td>
-
-            <td>29/06/2023</td>
-
-            <td>21:48</td>
-
-            <td>30/06/2023</td>
-
-            <td>40</td>
-
-            <td>01aa47ff</td>
-
-          </tr>
-          <tr>
-            <td>Finance</td>
-
-            <td>Prod_layer</td>
-
-            <td>Call Proceducer ML_Xbox1()</td>
-
-            <td>Data_science</td>
-
-            <td>prd_data_scientist</td>
-
-            <td>andre mern</td>
-
-            <td>29/06/2023</td>
-
-            <td>21:48</td>
-
-            <td>30/06/2023</td>
-
-            <td>40</td>
-
-            <td>01aa47ff</td>
-          </tr>
         </tbody>
       </table>
     </div>
