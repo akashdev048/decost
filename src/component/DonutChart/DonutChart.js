@@ -9,6 +9,23 @@ export const DonutChart1 = ({data3,data4}) => {
   const[series,setSeries]= useState([])
   const[labels,setLabels]= useState([])
 
+    const [activeButton, setActiveButton] = useState('cost'); 
+  // const DonutChart2 = ({ data1, data2 }) => {
+  //   const [activeButton, setActiveButton] = useState('cost'); // 'cost' or 'time'
+  //   // Rest of the component code...
+  // };
+  
+  // const DonutChart3 = ({ data7, data8 }) => {
+  //   const [activeButton, setActiveButton] = useState('cost'); // 'cost' or 'time'
+  //   // Rest of the component code...
+  // };
+  
+  // const DonutChart4 = ({ data5, data6 }) => {
+  //   const [activeButton, setActiveButton] = useState('cost'); // 'cost' or 'time'
+  //   // Rest of the component code...
+  // };
+  
+
 
   useEffect(() => {
     if (data3.length!==0) {
@@ -19,6 +36,7 @@ export const DonutChart1 = ({data3,data4}) => {
 
 
   const handleCost = ()=>{
+    setActiveButton('cost');
     if (data3.length!==0) {
       setSeries(Object.values(data3.COST))
       setLabels(Object.values(data3.WORKLOAD))
@@ -26,6 +44,7 @@ export const DonutChart1 = ({data3,data4}) => {
   }
 
   const handleTime = ()=>{
+    setActiveButton('time');
     if (data4.length!==0) {
       setSeries(Object.values(data4.TIME))
       setLabels(Object.values(data4.WORKLOAD))
@@ -66,8 +85,17 @@ export const DonutChart1 = ({data3,data4}) => {
     <div>
       <label className='chart-label'>Workload Consumption</label>
       <div className='chart-tabs'>
-        <button onClick={handleCost}>Cost</button>
-        <button onClick={handleTime}>Time</button>
+        <button onClick={handleCost}
+        style={{
+          borderColor:activeButton === 'cost' ? ' #16C098' : '#999999',
+        }}
+        
+        >Cost</button>
+        <button onClick={handleTime}
+        style={{
+          borderColor: activeButton === 'time' ? ' #16C098' : '#999999',
+        }}
+        >Time</button>
       </div>
       <Chart
         options={chartOptions}
@@ -81,6 +109,7 @@ export const DonutChart1 = ({data3,data4}) => {
 }
 
 export const DonutChart2 = ({data1,data2}) => {
+  const [activeButton, setActiveButton] = useState('cost'); 
   const[warehouseseries,setWarehouseSeries]= useState([])
   const[warehouselabels,setWarehouseLables]= useState([])
 
@@ -94,6 +123,7 @@ export const DonutChart2 = ({data1,data2}) => {
 
 
   const warehousehandleCost = ()=>{
+    setActiveButton('cost');
     if (data1.length!==0) {
       setWarehouseSeries(Object.values(data1.COST))
       setWarehouseLables(Object.values(data1.WAREHOUSE))
@@ -101,6 +131,7 @@ export const DonutChart2 = ({data1,data2}) => {
   }
 
   const  warehousehandleTime = ()=>{
+    setActiveButton('time');
     if (data2.length!==0) {
       setWarehouseSeries(Object.values(data2.TIME))
       setWarehouseLables(Object.values(data2.WAREHOUSE))
@@ -141,8 +172,16 @@ export const DonutChart2 = ({data1,data2}) => {
     <div>
       <label className='chart-label'>Warehouse Consumption</label>
       <div className='chart-tabs'>
-        <button  onClick={warehousehandleCost}>Cost</button>
-        <button  onClick={warehousehandleTime}>Time</button>
+        <button  onClick={warehousehandleCost}
+         style={{
+          borderColor:activeButton === 'cost' ? ' #16C098' : '#999999',
+        }}
+        >Cost</button>
+        <button  onClick={warehousehandleTime}
+         style={{
+          borderColor:activeButton === 'time' ? ' #16C098' : '#999999',
+        }}
+        >Time</button>
       </div>
       <Chart
         options={chartOptions}
@@ -156,6 +195,8 @@ export const DonutChart2 = ({data1,data2}) => {
 }
 
 export const DonutChart3 = ({data7,data8}) => {
+  const [activeButton, setActiveButton] = useState('cost'); 
+
   const[roleseries,setroleSeries]= useState([])
   const[rolelabels,setroleLables]= useState([])
 
@@ -169,6 +210,7 @@ export const DonutChart3 = ({data7,data8}) => {
 
 
   const rolehandleCost = ()=>{
+    setActiveButton('cost');
     if (data7.length!==0) {
       setroleSeries(Object.values(data7.COST))
       setroleLables(Object.values(data7.ROLE))
@@ -176,6 +218,7 @@ export const DonutChart3 = ({data7,data8}) => {
   }
 
   const rolehandleTime = ()=>{
+    setActiveButton('time');
     if (data8.length!==0) {
       setroleSeries(Object.values(data8.TIME))
       setroleLables(Object.values(data8.ROLE))
@@ -215,8 +258,16 @@ export const DonutChart3 = ({data7,data8}) => {
     <div>
       <label className='chart-label'>Role Consumption</label>
       <div className='chart-tabs'>
-        <button onClick={rolehandleCost}>Cost</button>
-        <button onClick={rolehandleTime}>Time</button>
+        <button onClick={rolehandleCost}
+         style={{
+          borderColor:activeButton === 'cost' ? ' #16C098' : '#999999',
+        }}
+        >Cost</button>
+        <button onClick={rolehandleTime}
+         style={{
+          borderColor:activeButton === 'time' ? ' #16C098' : '#999999',
+        }}
+        >Time</button>
       </div>
       <Chart
         options={chartOptions}
@@ -230,6 +281,7 @@ export const DonutChart3 = ({data7,data8}) => {
 }
 
 export const DonutChart4 = ({data5,data6}) => {
+  const [activeButton, setActiveButton] = useState('cost');
   const[userseries,setuserSeries]= useState([])
   const[userlabels,setuserLables]= useState([])
 
@@ -243,6 +295,7 @@ export const DonutChart4 = ({data5,data6}) => {
 
 
   const userhandleCost = ()=>{
+    setActiveButton('cost');
     if (data5.length!==0) {
       setuserSeries(Object.values(data5.COST))
       setuserLables(Object.values(data5.USER))
@@ -250,6 +303,7 @@ export const DonutChart4 = ({data5,data6}) => {
   }
 
   const userhandleTime = ()=>{
+    setActiveButton('time');
     if (data6.length!==0) {
       setuserSeries(Object.values(data6.TIME))
       setuserLables(Object.values(data6.USER))
@@ -289,8 +343,15 @@ export const DonutChart4 = ({data5,data6}) => {
     <div>
       <label className='chart-label'>User Consumtion</label>
       <div className='chart-tabs'>
-        <button onClick={userhandleCost}>Cost</button>
-        <button onClick={userhandleTime}>Time</button>
+        <button onClick={userhandleCost}
+        style={{
+          borderColor:activeButton === 'cost' ? ' #16C098' : '#999999',
+        }}
+        >Cost</button>
+        <button onClick={userhandleTime}
+        style={{
+          borderColor:activeButton === 'time' ? ' #16C098' : '#999999',
+        }}>Time</button>
       </div>
       <Chart
         options={chartOptions}

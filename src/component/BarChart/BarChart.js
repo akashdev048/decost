@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from "react";
 import ReactApexChart from "react-apexcharts";
 const BarChart = ({data10,data11}) => {
+  const [activeButton, setActiveButton] = useState('cost');
   // Define your chart data
 
   const[user,setUser]= useState([])
@@ -15,6 +16,7 @@ const BarChart = ({data10,data11}) => {
 
 
   const handleCost = ()=>{
+    setActiveButton('cost');
     if (data10.length!==0) {
       setUser(Object.values(data10.USER))
       setData(Object.values(data10.TIME_IN_MIN))
@@ -22,6 +24,7 @@ const BarChart = ({data10,data11}) => {
   }
 
   const handleTime = ()=>{
+    setActiveButton('time');
     if (data11.length!==0) {
       setUser(Object.values(data11.USER))
       setData(Object.values(data11.COST))
@@ -71,8 +74,14 @@ const BarChart = ({data10,data11}) => {
   return (
     <div>
       <div className='chart-tabs'>
-        <button onClick={handleCost}>Cost</button>
-        <button  onClick={handleTime}>Time</button>
+        <button onClick={handleCost}
+          style={{
+            borderColor:activeButton === 'cost' ? ' #16C098' : '#999999',
+          }}>Cost</button>
+        <button  onClick={handleTime}
+          style={{
+            borderColor:activeButton === 'time' ? ' #16C098' : '#999999',
+          }}>Time</button>
       </div>
       <ReactApexChart
         options={chartData.options}
