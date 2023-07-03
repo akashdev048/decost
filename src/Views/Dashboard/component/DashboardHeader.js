@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Select from "react-select";
 import "./dashboard-header.css";
 
 const DashboardHeader = ({ startDate, endDate, applyDate,applyReset }) => {
+
+  const [intialstartDate,setIntialStartDate] =useState("2022-01-01")
+  const[intialendDate,setIntialEndDate]=useState("2023-06-30")
+
   const handleStartDate = (e) => {
     startDate(e.target.value);
+    setIntialStartDate(e.target.value)
   };
 
   const handleEndDate = (e) => {
     endDate(e.target.value);
+    setIntialEndDate(e.target.value)
   };
 
   const handleApplyDate = (e)=>{
@@ -43,6 +49,7 @@ const DashboardHeader = ({ startDate, endDate, applyDate,applyReset }) => {
                 <div className="date-area-web">
                   <input
                     type="date"
+                    value={intialstartDate}
                     className="form-control date-control"
                     placeholder="12/12/2022"
                     onChange={handleStartDate}
@@ -56,6 +63,7 @@ const DashboardHeader = ({ startDate, endDate, applyDate,applyReset }) => {
                 <div className="date-area-web">
                   <input
                     type="date"
+                    value={intialendDate}
                     className="form-control date-control"
                     placeholder="19/12/2022"
                     onChange={handleEndDate}
