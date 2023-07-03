@@ -82,27 +82,27 @@ const Monitors = () => {
     <div className="monito-section">
       <Container fluid>
         <Tabs className="mb-3">
-          <Tab eventKey="job-monitor" title="job-monitor">
+          <Tab eventKey="job-monitor" title="Job monitor">
             <div className="heading-bar-top mt-3"><h2 className="title-main-wgt">Overall Cost summary </h2></div>
             <Row>
               <Col className="col-12 col-lg-3 col-xl-2">
                 <div className="card cardequal-ht">
                   <div className="card-body px-2">
-                    <div className="wg-elemnt-mt"><h3 class="small-title-wgt">Average Montly Cost</h3><p><b>₹ 6.38</b></p></div>
+                    <div className="wg-elemnt-mt"><h3 class="small-title-wgt">Average Montly Cost</h3><p><b>$ 6.38</b></p></div>
                   </div>
                 </div>
               </Col>
               <Col className="col-12 col-lg-3 col-xl-2">
                 <div className="card cardequal-ht">
                   <div className="card-body px-2">
-                    <div className="wg-elemnt-mt"><h3 class="small-title-wgt">Minimum Montly Cost</h3><p><b>₹ 0.04</b></p></div>
+                    <div className="wg-elemnt-mt"><h3 class="small-title-wgt">Minimum Montly Cost</h3><p><b>$ 0.04</b></p></div>
                   </div>
                 </div>
               </Col>
               <Col className="col-12 col-lg-3 col-xl-2">
                 <div className="card cardequal-ht">
                   <div className="card-body px-2">
-                    <div className="wg-elemnt-mt"><h3 class="small-title-wgt">Maximum Montly Cost</h3><p><b>₹ 39.34</b></p></div>
+                    <div className="wg-elemnt-mt"><h3 class="small-title-wgt">Maximum Montly Cost</h3><p><b>$ 39.34</b></p></div>
                   </div>
                 </div>
               </Col>
@@ -110,28 +110,36 @@ const Monitors = () => {
             <div className="card mb-2">
               <div className="card-body">
                 <div className='chart-tabs'>
+                  <div className="selct-option">
+                    <select className="select-opt-ware-h form-control"
+                    // onChange={handleDropdownSelect}
+                    >
+                      <option value = 'OverAll'>{'OverAll'}</option>
+                      <option value = 'Finance'>{'Finance'}</option>
+                    </select>
+                  </div>
                   <button onClick={() => setSelected('overall')} style={{ background: selected == 'overall' ? '#e5e0e0' : '' }}  >Overall</button>
                   <button onClick={() => setSelected('finance')} style={{ background: selected == 'finance' ? '#e5e0e0' : '' }}  >Finance</button>
                 </div>
                 {
                   selected == 'overall' ?
-                  <div className="wg-elemnt-mt"><StackChart /></div> 
-                  :
-                  <div className="wg-elemnt-mt"><StackChart1 /></div>
+                    <div className="wg-elemnt-mt"><StackChart /></div>
+                    :
+                    <div className="wg-elemnt-mt"><StackChart1 /></div>
 
                 }
-               
+
               </div>
             </div>
             <Row className="table-container ww">
               <Col>
-              {
-                   selected == 'overall' ? 
-                   <MonitorTable />
-                   :
-                   <MonitorTable1 />
-              }
-               
+                {
+                  selected == 'overall' ?
+                    <MonitorTable />
+                    :
+                    <MonitorTable1 />
+                }
+
               </Col>
             </Row>
           </Tab>

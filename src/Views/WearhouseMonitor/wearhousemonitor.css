@@ -11,3 +11,16 @@
     margin-bottom: 0px;
     color: #000;
 }
+.break-word-point{
+    word-break: break-all;
+}
+.tabel-scroll-height{
+    overflow-y: auto;
+    max-height: 250px;
+}
+.select-opt-ware-h{
+    font-size: 10px;
+    padding: 5px 5px;
+    appearance: auto;
+    font-weight: 500;
+}
